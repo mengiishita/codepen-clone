@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { tokyoNight } from "@uiw/codemirror-theme-tokyo-night";
 
@@ -30,12 +30,13 @@ const Container = styled(Box)`
 `;
 
 const Editor = ({ heading, icon, color, value, onChange }) => {
+  const [open, setOpen] = useState(true);
   const handleChange = (editor, data, value) => {
     onChange(value);
   };
 
   return (
-    <Container>
+    <Container style={open ? null : { flexGrow: 0 }}>
       <Header>
         <Heading>
           <Box
@@ -56,7 +57,11 @@ const Editor = ({ heading, icon, color, value, onChange }) => {
           </Box>
           {heading}
         </Heading>
-        <CloseFullscreenIcon />
+        <CloseFullscreenIcon
+          fontSize="small"
+          style={{ alignSelf: "center" }}
+          onClick={() => setOpen((prevState) => !prevState)}
+        />
       </Header>
       <CodeMirror
         theme={tokyoNight}
