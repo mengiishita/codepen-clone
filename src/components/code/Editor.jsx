@@ -21,9 +21,17 @@ const Header = styled(Box)`
   font-weight: 700;
 `;
 
+const Container = styled(Box)`
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 8px 8px;
+`;
+
 const Editor = ({ heading, icon, color }) => {
   return (
-    <Box>
+    <Container>
       <Header>
         <Heading>
           <Box
@@ -47,7 +55,7 @@ const Editor = ({ heading, icon, color }) => {
         <CloseFullscreenIcon />
       </Header>
       <CodeMirror theme={tokyoNight} height="340px" />
-    </Box>
+    </Container>
   );
 };
 
