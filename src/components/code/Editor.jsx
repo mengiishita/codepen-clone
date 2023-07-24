@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import CodeMirror from "@uiw/react-codemirror";
-import { tokyoNight } from "@uiw/codemirror-theme-tokyo-night";
+import "codemirror/lib/codemirror.css";
+import "codemirror/theme/material.css";
+import "codemirror/mode/xml/xml";
+import "codemirror/mode/javascript/javascript";
+import "codemirror/mode/css/css";
+import { Controlled as ControlledEditor } from "react-codemirror2";
 
 import { Box, styled } from "@mui/material";
 import CloseFullscreenIcon from "@mui/icons-material/CloseFullscreen";
@@ -63,11 +67,15 @@ const Editor = ({ heading, icon, color, value, onChange }) => {
           onClick={() => setOpen((prevState) => !prevState)}
         />
       </Header>
-      <CodeMirror
-        theme={tokyoNight}
-        height="340px"
+      <ControlledEditor
+        onBeforeChange={handleChange}
         value={value}
-        onBeforeChange={() => handleChange()}
+        options={{
+          lineWrapping: true,
+          lint: true,
+          lineNumbers: true,
+          theme: "material",
+        }}
       />
     </Container>
   );
