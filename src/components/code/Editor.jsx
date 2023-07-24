@@ -21,7 +21,7 @@ const Header = styled(Box)`
   font-weight: 700;
 `;
 
-const Editor = () => {
+const Editor = ({ heading, icon, color }) => {
   return (
     <Box>
       <Header>
@@ -29,7 +29,7 @@ const Editor = () => {
           <Box
             component="span"
             style={{
-              background: "red",
+              background: color,
               height: 20,
               width: 20,
               display: "flex",
@@ -37,11 +37,12 @@ const Editor = () => {
               borderRadius: 5,
               marginRight: 5,
               paddingBottom: 2,
+              color: "#000",
             }}
           >
-            /
+            {icon}
           </Box>
-          HTML
+          {heading}
         </Heading>
         <CloseFullscreenIcon />
       </Header>

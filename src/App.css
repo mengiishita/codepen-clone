@@ -1,4 +1,13 @@
+.body {
+  background: #060606;
+}
+
 .CodeMirror.cm-s-default {
   background: #1e1d22;
   color: #fff;
+}
+
+.CodeMirror-gutters {
+  background: #1d1e22 !important;
+  border: 1px solid #1d1e22 !important;
 }
