@@ -1,3 +1,4 @@
-.App {
-  text-align: center;
+.CodeMirror.cm-s-default {
+  background: #1e1d22;
+  color: #fff;
 }
