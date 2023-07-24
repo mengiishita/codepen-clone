@@ -29,7 +29,11 @@ const Container = styled(Box)`
   padding: 0 8px 8px;
 `;
 
-const Editor = ({ heading, icon, color }) => {
+const Editor = ({ heading, icon, color, value, onChange }) => {
+  const handleChange = (editor, data, value) => {
+    onChange(value);
+  };
+
   return (
     <Container>
       <Header>
@@ -54,7 +58,12 @@ const Editor = ({ heading, icon, color }) => {
         </Heading>
         <CloseFullscreenIcon />
       </Header>
-      <CodeMirror theme={tokyoNight} height="340px" />
+      <CodeMirror
+        theme={tokyoNight}
+        height="340px"
+        value={value}
+        onBeforeChange={() => handleChange()}
+      />
     </Container>
   );
 };
