@@ -1,6 +1,23 @@
-# Getting Started with Create React App
+# Codepen Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://create-react-app.dev/), using [Material UI](https://mui.com/) and [react-codemirror2](https://www.npmjs.com/package/react-codemirror2)
+
+## Description
+
+This is a fully functional Codepen clone. Codepen is an online community for testing and showcasing user-created HTML, CSS and Javascript code snippets. It is an online code editor where developers can create code snippets called "pens" and test them.
+
+## Links
+
+Live Application: [https://im-codepen.netlify.app](https://im-codepen.netlify.app)
+
+## Packages and Technologies used:
+
+[React](https://react.dev/learn)
+
+[Material UI](https://mui.com/)
+
+[react-codemirror2](https://www.npmjs.com/package/react-codemirror2)
+
 
 ## Available Scripts
 
